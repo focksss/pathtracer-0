@@ -220,13 +220,14 @@ public class dispatch {
         scene.setLastMtl("Pr", 1);
 
         scene.addMaterial("test");
-        scene.setLastMtl("Kd", new vec(0.45, 0.8, 0.5));
+        scene.setLastMtl("Kd", new vec(0.8, 0.45, 0.5));
         scene.setLastMtl("Ks", new vec(0.5));
         scene.setLastMtl("Ni", 1.45);
         scene.setLastMtl("Pr", 1);
         scene.setLastMtl("Pc", 0.0);
         scene.setLastMtl("Pcr", 0.0);
-        scene.setLastMtl("subsurface", 1);
+        scene.setLastMtl("Tr", 0.7);
+        scene.setLastMtl("subsurface", 0);
         scene.setLastMtl("subsurfaceColor", new vec(0.45, 0.8, 0.5));
         scene.setLastMtl("subsurfaceRadius", new vec(1,1,1));
         scene.setLastMtl("Density", 0.1);
@@ -237,8 +238,8 @@ public class dispatch {
         //scene.addTri(new vec(0), new vec(1,1,0), new vec(0,0,1), 0);
         //scene.addEllipsoid(new vec(0, 0.1, 0.2), new vec(1), new vec(0), 0.05f, 1);
         scene.addObject("C:\\Graphics\\antiDoxxFolder\\box2", 1, new vec(1), new vec(0), new vec(0));
-        scene.addObject("C:\\Graphics\\antiDoxxFolder\\tomato", 1, new vec (0.06), new vec(0,0.0,1.3), new vec(0, 0, 0));
-        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonSmall", 1, new vec (-1,1,-1), new vec(0,0.3,1), new vec(0, 0, 0));
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\tomato", 1, new vec (0.06), new vec(0,0.0,1.3), new vec(0, 0, 0));
+        scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonSmall", 1, new vec (-1,1,-1), new vec(0,0.3,1), new vec(0, 0, 0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\bust", 1 , new vec(-1.5,1.5,-1.5), new vec(0,0,1), new vec(0));
 
 
