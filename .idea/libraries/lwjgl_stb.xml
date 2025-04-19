@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lwjgl-stb">
+    <CLASSES>
+      <root url="file://$USER_HOME$/OneDrive/Desktop/desktop/GraphicsProgramming/LWJGL/lwjgl-stb" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/OneDrive/Desktop/desktop/GraphicsProgramming/LWJGL/lwjgl-stb" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/OneDrive/Desktop/desktop/GraphicsProgramming/LWJGL/lwjgl-stb" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/OneDrive/Desktop/desktop/GraphicsProgramming/LWJGL/lwjgl-stb" recursive="false" type="SOURCES" />
+  </library>
+</component>
