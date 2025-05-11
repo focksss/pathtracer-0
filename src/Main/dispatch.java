@@ -60,8 +60,14 @@ public class dispatch {
     private static final float camSize = 1.5f;
     private static final float focalLength = 1;
     //box demo
-    private static final float[] cam = {(float) 0, (float) .5, (float) 0};
-    private static final float[] rot = {(float) 0.25, (float) 0, (float) 0};
+//    private static final float[] cam = {(float) 0, (float) .5, (float) 0};
+//    private static final float[] rot = {(float) 0.25, (float) 0, (float) 0};
+
+//    private static final float[] cam = {(float) 0, (float) .79, (float) 2.65};
+//    private static final float[] rot = {(float) 0.266, (float) -3.21, (float) 0};
+//
+    private static final float[] cam = {(float) -10, (float) 5.4, (float) 4};
+    private static final float[] rot = {(float) 0.39, (float) -3.89, (float) 0};
     //inputs
     private static float MOVE_SPEED = 0.1f;
     private static final float sensitivity = 1.25f;
@@ -129,7 +135,7 @@ public class dispatch {
     private static final String QUAD_VERTEX_SHADER;
     static {
         try {
-            QUAD_VERTEX_SHADER = functions.getString("C:\\Users\\enzo\\IdeaProjects\\raytracer\\src\\shaders\\vert.glsl");
+            QUAD_VERTEX_SHADER = functions.getString("C:\\Graphics\\raytracer\\src\\shaders\\vert.glsl");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -138,7 +144,7 @@ public class dispatch {
     private static final String QUAD_FRAGMENT_SHADER;
     static {
         try {
-            QUAD_FRAGMENT_SHADER = functions.getString("C:\\Users\\enzo\\IdeaProjects\\raytracer\\src\\shaders\\frag.glsl");
+            QUAD_FRAGMENT_SHADER = functions.getString("C:\\Graphics\\raytracer\\src\\shaders\\frag.glsl");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -237,14 +243,18 @@ public class dispatch {
 
         //scene.addTri(new vec(0), new vec(1,1,0), new vec(0,0,1), 0);
         //scene.addEllipsoid(new vec(0, 0.1, 0.2), new vec(1), new vec(0), 0.05f, 1);
-        scene.addObject("C:\\Graphics\\antiDoxxFolder\\box2", 1, new vec(1), new vec(0), new vec(0));
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\box2", 1, new vec(1), new vec(0), new vec(0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\tomato", 1, new vec (0.06), new vec(0,0.0,1.3), new vec(0, 0, 0));
-        scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonSmall", 1, new vec (-1,1,-1), new vec(0,0.3,1), new vec(0, 0, 0));
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonSmall", 1, new vec (-1,1,-1), new vec(0,0.3,1), new vec(0, 0, 0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\bust", 1 , new vec(-1.5,1.5,-1.5), new vec(0,0,1), new vec(0));
 
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\table", 1, new vec (1), new vec(0,-0.43,1), new vec(0, 0, 0));
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonSmall", 1, new vec (2), new vec(0,0.29,1), new vec(0, 0, 0));
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\breakfastRoom", 1, new vec (2), new vec(0,0.29,1), new vec(0, 0, 0));
 
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\INTERIOR2", 0, new vec(10), new vec(7, 2.02, 0), new vec(0, 0, 0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\wineglassfull", 1, new vec(0.3), new vec(-4, 2.9, 25), new vec(0, 0, 0));
+        scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonHIGH", 1, new vec(1), new vec(0), new vec(0, 0, 0));
 
 
 
