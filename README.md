@@ -1,6 +1,6 @@
 For some reason decided to use only 1 script
 
-There was no real basis behind the shading logic, just did what seemed to make sense
+This was my first "real" (not on Desmos) graphics programming project. As a result, the shading is only loosely PBR.
 
 Has refraction, density + transmission filtering, roughness, metallicity, clearcoat, and very rough subsurface scattering
 
