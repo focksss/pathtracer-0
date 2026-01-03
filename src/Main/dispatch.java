@@ -49,8 +49,8 @@ public class dispatch {
     private static final int WIDTH = 1920;
     private static final int HEIGHT = 1080;
     private static final int res = 1920;
-    private static final boolean RAYTRACING = true;
-    private static final boolean DEBUG = false;
+    public static boolean RAYTRACING = false;
+    public static boolean DEBUG = true;
     private static final int SAMPLE_RESOLUTION = 8;
     private static final int MAX_BOUNCES = 6;
     private static final float NEGATIVE_GAMMA = 0.0f;
@@ -66,7 +66,7 @@ public class dispatch {
 //    private static final float[] cam = {(float) 0, (float) .79, (float) 2.65};
 //    private static final float[] rot = {(float) 0.266, (float) -3.21, (float) 0};
 //
-    private static final float[] cam = {(float) -10, (float) 5.4, (float) 4};
+    private static final float[] cam = {(float) -5, (float) 2, (float) 2};
     private static final float[] rot = {(float) 0.39, (float) -3.89, (float) 0};
     //inputs
     private static float MOVE_SPEED = 0.1f;
@@ -218,7 +218,7 @@ public class dispatch {
         //for emissive materials of meshes, dont assign any other list-adjacent tris to the same material
         //bottles
         System.out.println("creating scene and parsing objects...");
-        textures.add("C:\\Graphics\\antiDoxxFolder\\thatch_chapel_4k.png");
+        textures.add("C:\\Graphics\\ffengine\\editor\\resources\\citrus_orchard_road_puresky_4k.hdr");
         textureNames.add("skybox.png");
 
         scene.addMaterial("default");
@@ -244,7 +244,7 @@ public class dispatch {
         //scene.addTri(new vec(0), new vec(1,1,0), new vec(0,0,1), 0);
         //scene.addEllipsoid(new vec(0, 0.1, 0.2), new vec(1), new vec(0), 0.05f, 1);
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\box2", 1, new vec(1), new vec(0), new vec(0));
-        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\tomato", 1, new vec (0.06), new vec(0,0.0,1.3), new vec(0, 0, 0));
+        scene.addObject("C:\\Graphics\\antiDoxxFolder\\tomatoTest", 1, new vec (0.06), new vec(0,0.0,1.3), new vec(0, 0, 0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonSmall", 1, new vec (-1,1,-1), new vec(0,0.3,1), new vec(0, 0, 0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\bust", 1 , new vec(-1.5,1.5,-1.5), new vec(0,0,1), new vec(0));
 
@@ -254,7 +254,7 @@ public class dispatch {
 
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\INTERIOR2", 0, new vec(10), new vec(7, 2.02, 0), new vec(0, 0, 0));
         //scene.addObject("C:\\Graphics\\antiDoxxFolder\\wineglassfull", 1, new vec(0.3), new vec(-4, 2.9, 25), new vec(0, 0, 0));
-        scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonHIGH", 1, new vec(1), new vec(0), new vec(0, 0, 0));
+        //scene.addObject("C:\\Graphics\\antiDoxxFolder\\dragonLow", 1, new vec(1), new vec(0), new vec(0, 0, 0));
 
 
 
@@ -639,8 +639,8 @@ public class dispatch {
                 mouseBuffer.put((float) (res*screenHratio - mousePos.y));
                 mouseBuffer.put(glfwGetMouseButton(window,0));
                 mouseBuffer.flip();
-                glBindBuffer(GL_SHADER_STORAGE_BUFFER, mouseSSBO);
-                glBufferSubData(GL_SHADER_STORAGE_BUFFER, 0, mouseBuffer);
+                //glBindBuffer(GL_SHADER_STORAGE_BUFFER, mouseSSBO);
+                //glBufferSubData(GL_SHADER_STORAGE_BUFFER, 0, mouseBuffer);
 
 
                 if (VARS.CAM_MOVING || was_moving || FRAMES_STILL == -1) {
@@ -793,6 +793,20 @@ public class dispatch {
                         if (input.contains("screenshot")) {
                             glFinish();
                             screenshot("GLSL_render.png");
+                        }
+                        if (input.contains("debug")) {
+                            DEBUG = !DEBUG;
+                            if (RAYTRACING) {
+                                RAYTRACING = false;
+                            }
+                        }
+                        if (input.contains("path")) {
+                            RAYTRACING = true;
+                            DEBUG = false;
+                        }
+                        if (input.contains("single")) {
+                            RAYTRACING = false;
+                            DEBUG = false;
                         }
                     }
                 }

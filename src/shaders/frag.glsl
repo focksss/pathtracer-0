@@ -531,7 +531,8 @@ raySceneResult rayBVH(vec3 o, vec3 d, int topLvlBVH, float previous_closest_t) {
             }
         }
     }
-    result.col = outputColor*0.1 + vec3(0,0,exp(0.01*(boxTests-200))) + vec3(exp(0.02*(triTests-150)),0,0);
+    result.col = outputColor*0.1 + vec3(0,0,boxTests * 0.02);
+//    result.col = outputColor*0.1 + vec3(0,0,exp(0.01*(boxTests-50))) + vec3(exp(0.02*(triTests-250)),0,0);
     //result.col = vec3(boxTests*0.01);
     return result;
 }
@@ -658,7 +659,7 @@ vec3 directDiffuse(vec3 o, vec3 d) {
         mtl m = newMtl(hit.material);
         m = mapMtl(m, hit.uvSample);
         vec3 N = (m.map_norm > -1 ? sampleTexture(m.map_norm, hit.uvSample) : hit.norm);
-        vec3 col =  m.Ka + m.Kd*0.2 + (m.Kd*dot(vec3(0, 1, 0), N)) + m.Ke;
+        vec3 col =  (m.Ka + m.Kd*0.2 + (m.Kd*dot(vec3(0, 1, 0), N)) + m.Ke);
         if (m.subsurface > 0) {
             vec3 subsurfaceColor = m.subsurfaceColor;
             vec3 subsurfaceRadius = m.subsurfaceRadius;
