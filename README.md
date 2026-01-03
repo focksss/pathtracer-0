@@ -1,6 +1,4 @@
-For some reason decided to use only 1 script
-
-This was my first "real" (not on Desmos) graphics programming project. As a result, the shading is only loosely PBR.
+This was my first "real" (not on Desmos) graphics programming project. As a result, the shading is only mostly PBR.
 
 Has refraction, density + transmission filtering, roughness, metallicity, clearcoat, and very rough subsurface scattering
 
